@@ -16,7 +16,7 @@ class InlineStylesHead extends Head {
       />
     ));
 
-    return !cssLinks || cssLinks.length === 0 ? cssLinks : null;
+    return cssLinks.length ? cssLinks : null;
   }
 }
 
