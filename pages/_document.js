@@ -3,26 +3,20 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 class InlineStylesHead extends Head {
-  getCssLinks() {
-    return this.__getInlineStyles();
-  }
+  getCssLinks(files) {
+    const cssFiles = files.allFiles.filter((f) => /\.css$/.test(f));
+    const cssLinks = cssFiles.map((file) => (
+      <style
+        key={file}
+        nonce={this.props.nonce}
+        data-href={`/_next/${file}`}
+        dangerouslySetInnerHTML={{
+          __html: fs.readFileSync(path.join(process.cwd(), '.next', file), 'utf-8'),
+        }}
+      />
+    ));
 
-  __getInlineStyles() {
-    const { assetPrefix, files } = this.context;
-    if (!files || files.length === 0) return null;
-
-    return files
-      .filter((file) => /\.css$/.test(file))
-      .map((file) => (
-        <style
-          key={file}
-          nonce={this.props.nonce}
-          data-href={`${assetPrefix}/_next/${file}`}
-          dangerouslySetInnerHTML={{
-            __html: fs.readFileSync(path.join(process.cwd(), '.next', file), 'utf-8'),
-          }}
-        />
-      ));
+    return !cssLinks || cssLinks.length === 0 ? cssLinks : null;
   }
 }
 
