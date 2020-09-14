@@ -4,12 +4,13 @@ import * as path from 'path';
 
 class InlineStylesHead extends Head {
   getCssLinks(files) {
+    const { assetPrefix } = this.context;
     const cssFiles = files.allFiles.filter((f) => /\.css$/.test(f));
     const cssLinks = cssFiles.map((file) => (
       <style
         key={file}
         nonce={this.props.nonce}
-        data-href={`/_next/${file}`}
+        data-href={`${assetPrefix}/_next/${file}`}
         dangerouslySetInnerHTML={{
           __html: fs.readFileSync(path.join(process.cwd(), '.next', file), 'utf-8'),
         }}
