@@ -31,13 +31,6 @@ export default class Document extends NextDocument {
     return (
       <Html lang='en'>
         <InlineStylesHead>
-          <link
-            rel='preload'
-            href='/fonts/Inter-roman.var-latin.woff2?3.13'
-            as='font'
-            type='font/woff2'
-            crossOrigin='true'
-          />
           <link rel='icon' href='/favicon.ico' />
         </InlineStylesHead>
         <body>
