@@ -1,5 +1,5 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import * as fs from 'fs';
+import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 import * as path from 'path';
 
 class InlineStylesHead extends Head {

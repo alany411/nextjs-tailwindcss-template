@@ -1,9 +1,13 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const formsPlugin = require('@tailwindcss/forms');
+const typographyPlugin = require('@tailwindcss/typography');
+const aspectRatioPlugin = require('@tailwindcss/aspect-ratio');
 
 module.exports = {
+  plugins: [formsPlugin, typographyPlugin, aspectRatioPlugin],
   purge: {
-    mode: 'all',
     content: ['./**/*.{js,jsx}'],
+    mode: 'all',
     options: {},
   },
   theme: {
@@ -14,5 +18,4 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
 };
