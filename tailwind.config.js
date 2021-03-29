@@ -4,12 +4,9 @@ const typographyPlugin = require('@tailwindcss/typography');
 const aspectRatioPlugin = require('@tailwindcss/aspect-ratio');
 
 module.exports = {
+  darkMode: false,
   plugins: [formsPlugin, typographyPlugin, aspectRatioPlugin],
-  purge: {
-    content: ['./**/*.{js,jsx}'],
-    mode: 'all',
-    options: {},
-  },
+  purge: ['./src/**/*.{js,jsx}'],
   theme: {
     extend: {
       fontFamily: {
