@@ -12,7 +12,7 @@ module.exports = {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 2020,
   },
-  plugins: ['jsx-a11y', 'prettier', 'react', 'react-hooks', 'simple-import-sort'],
+  plugins: ['jsx-a11y', 'prettier', 'react', 'react-hooks', 'simple-import-sort', 'html', 'import'],
   rules: {
     // base
     camelcase: 0,
