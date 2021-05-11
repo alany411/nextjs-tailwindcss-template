@@ -8,7 +8,7 @@ module.exports = {
   darkMode: false,
   mode: 'jit',
   plugins: [formsPlugin, typographyPlugin, aspectRatioPlugin],
-  purge: ['./src/**/*.{js,jsx}'],
+  purge: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
