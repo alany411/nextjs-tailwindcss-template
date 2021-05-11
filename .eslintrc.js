@@ -1,18 +1,42 @@
 /* eslint-disable sort-keys */
 module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: { jsx: true },
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: [
+    '@typescript-eslint',
+    'jsx-a11y',
+    'react',
+    'react-hooks',
+    'simple-import-sort',
+    'html',
+    'import',
+    'prettier',
+  ],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
   env: {
+    amd: true,
     browser: true,
     commonjs: true,
     es6: true,
     node: true,
   },
-  extends: ['plugin:prettier/recommended'],
-  parser: 'babel-eslint',
-  parserOptions: {
-    ecmaFeatures: { jsx: true },
-    ecmaVersion: 2020,
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
-  plugins: ['jsx-a11y', 'prettier', 'react', 'react-hooks', 'simple-import-sort', 'html', 'import'],
   rules: {
     // base
     camelcase: 0,
@@ -44,7 +68,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.js', 'jsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     ],
     'react/jsx-no-comment-textnodes': 0,
@@ -58,10 +82,19 @@ module.exports = {
     // simple-import-sort
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
+    // typescript
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-member-accessibility': 0,
+    '@typescript-eslint/indent': 0,
+    '@typescript-eslint/member-delimiter-style': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-unused-vars': [
+      2,
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
   },
 };
