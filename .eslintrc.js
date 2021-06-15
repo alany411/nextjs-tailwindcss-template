@@ -16,6 +16,7 @@ module.exports = {
     'html',
     'import',
     'prettier',
+    '@next/eslint-plugin-next',
   ],
   extends: [
     'eslint:recommended',
@@ -24,6 +25,7 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:@next/next/recommended',
   ],
   env: {
     amd: true,

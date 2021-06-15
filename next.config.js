@@ -2,11 +2,9 @@ module.exports = {
   experimental: {
     optimizeCss: true,
     optimizeImages: true,
-    turboMode: true,
   },
   future: {
     strictPostcssConfiguration: true,
-    webpack5: true,
   },
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
